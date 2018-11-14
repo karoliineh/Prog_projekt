@@ -1,3 +1,8 @@
+## NOTES TO SELF (Karo)
+## Mõõdud ei meigi vasjee sensi
+## Oleks tore, kui mõõdud ka nt. joonise peale saaks
+## ISO vaade ka, siis juba suht esituskõlblik, hehe :P
+
 from tkinter import *
 
 
@@ -13,19 +18,39 @@ class jaotus:
             ## Muutujate jalg2;3;4 (ehk parempoolse jala kolm joont) juures on lahutatud mingid arvud pikkus_callbackist selleks,
             ## et kogu jalg sõltuvalt laua pikkusest ikka tasakaalu võimaldavas positsioonis oleks.
             tasapind1 = canvas.create_line(50, 50, pikkus_callback(self), 50) 
-            tasapind2 = canvas.create_line(50, 75, pikkus_callback(self), 75)
-            tasapind3 = canvas.create_line(50, 50, 50, 75)
-            tasapind4 = canvas.create_line(pikkus_callback(self), 50, pikkus_callback(self), 75)
-            jalg1 = canvas.create_line(60, 75, 60, kõrgus_callback(self))
+            tasapind2 = canvas.create_line(50, 61, pikkus_callback(self), 61)
+            tasapind3 = canvas.create_line(50, 50, 50, 61)
+            tasapind4 = canvas.create_line(pikkus_callback(self), 50, pikkus_callback(self), 61)
+            jalg1 = canvas.create_line(60, 61, 60, kõrgus_callback(self) -11)
                 #jalg2 = canvas.create_line(790, 75, 790, kõrgus_callback(self))
-            jalg2 = canvas.create_line(pikkus_callback(self) - 10, 75, pikkus_callback(self) - 10, kõrgus_callback(self))
-            jalg3 = canvas.create_line(75, 75, 75, kõrgus_callback(self))
+            jalg2 = canvas.create_line(pikkus_callback(self) - 10, 61, pikkus_callback(self) - 10, kõrgus_callback(self) -11)
+            jalg3 = canvas.create_line(70, 61, 70, kõrgus_callback(self) -11)
                 #jalg4 = canvas.create_line(775, 75, 775, kõrgus_callback(self))
-            jalg4 = canvas.create_line(pikkus_callback(self) - 25, 75, pikkus_callback(self) - 25, kõrgus_callback(self))
-            jalg5 = canvas.create_line(60, kõrgus_callback(self), 75, kõrgus_callback(self))
+            jalg4 = canvas.create_line(pikkus_callback(self) - 20, 61, pikkus_callback(self) - 20, kõrgus_callback(self) -11)
+            jalg5 = canvas.create_line(60, kõrgus_callback(self) -11, 70, kõrgus_callback(self) -11)
                 #jalg6 = canvas.create_line(775, kõrgus_callback(self), 790, kõrgus_callback(self))
-            jalg6 = canvas.create_line(pikkus_callback(self) - 25, kõrgus_callback(self), pikkus_callback(self) - 10, kõrgus_callback(self)) 
-            return tasapind1, tasapind2, tasapind3, tasapind4, jalg1, jalg2, jalg3, jalg4, jalg5, jalg6
+            jalg6 = canvas.create_line(pikkus_callback(self) - 20, kõrgus_callback(self) -11, pikkus_callback(self) - 10, kõrgus_callback(self) -11) 
+    
+        
+         ## ----- 14.11 Karoliine ------
+         ## ----- laud küljelt ---------
+        
+            tasapind5 = canvas.create_line(700, 50, 700+laius_callback(self), 50) 
+            tasapind6 = canvas.create_line(700, 61, 700+laius_callback(self), 61)
+            tasapind7 = canvas.create_line(700, 50, 700, 61)
+            tasapind8 = canvas.create_line(700+laius_callback(self), 50, 700+laius_callback(self), 61)
+            jalg7 = canvas.create_line(720, 61, 720, kõrgus_callback(self) -11)
+                #jalg2 = canvas.create_line(790, 75, 790, kõrgus_callback(self))
+            jalg8 = canvas.create_line(700+laius_callback(self) - 10, 61, 700+laius_callback(self) - 10, kõrgus_callback(self) -11)
+            jalg9 = canvas.create_line(730, 61, 730, kõrgus_callback(self) -11)
+                #jalg4 = canvas.create_line(775, 75, 775, kõrgus_callback(self))
+            jalg10 = canvas.create_line(700+laius_callback(self) - 20, 61, 700+laius_callback(self) - 20, kõrgus_callback(self) -11)
+            jalg11 = canvas.create_line(720, kõrgus_callback(self) -11, 730, kõrgus_callback(self) -11)
+                #jalg6 = canvas.create_line(775, kõrgus_callback(self), 790, kõrgus_callback(self))
+            jalg12 = canvas.create_line(700+laius_callback(self) - 20, kõrgus_callback(self) -11, 700+laius_callback(self) - 10, kõrgus_callback(self) -11) 
+            return tasapind1, tasapind2, tasapind3, tasapind4, jalg1, jalg2, jalg3, jalg4, jalg5, jalg6, tasapind5, tasapind6, tasapind7, tasapind8, jalg7, jalg8, jalg9, jalg10, jalg11, jalg12
+        
+        ## ----- 14.11 Karoliine ------
         
         # dimensioon callback funktsioonid fetchivad dimensiooniväljadesse kirjutatud numbrid,
         # mida omakorda saab laud_eest funktsioonis kasutusse võtta
@@ -51,9 +76,9 @@ class jaotus:
         footer = Frame(master)
         footer.pack(side=BOTTOM)
         
-        pikkus = Label(header, text="Pikkus (mm)")
-        laius = Label(header, text="Laius (mm)")
-        kõrgus = Label(header, text="Kõrgus (mm)")
+        pikkus = Label(header, text="Pikkus (cm)")
+        laius = Label(header, text="Laius (cm)")
+        kõrgus = Label(header, text="Kõrgus (cm)")
         pikkus_s = Entry(header, bg="white")
         laius_s = Entry(header, bg="white")
         kõrgus_s = Entry(header, bg="white")
@@ -71,19 +96,17 @@ class jaotus:
         tühi_tulp.grid(column=2)
         tühi_tulp2.grid(column=5)
         
-        tagaserv = Checkbutton(header, text="Tagaservaga", state= ACTIVE, variable = mvar)
-        tagaserv.grid(row=1, column=3)
+##      ---- peitsin selle nupu ära, hihi------
+##        tagaserv = Checkbutton(header, text="Tagaservaga", state= ACTIVE, variable = mvar)
+##        tagaserv.grid(row=1, column=3)
+
         
-##        joonista = Button(header, text = "Valmis", fg="black", bg="white")
-##        joonista.grid(row=1, column=4)
-##        joonista.bind("<Button-1>", laud_eest)
-        
-        self.nupp1 = Button(header, text="See on nupp")
+        self.nupp1 = Button(header, text="Joonista", fg="black", bg="white")
         self.nupp1.grid(row=1, column=4)
         self.nupp1.bind("<Button-1>", pikkus_callback)
         self.nupp1.bind("<Button-1>", laius_callback)
         self.nupp1.bind("<Button-1>", kõrgus_callback)
-        self.nupp1.bind("<Button-1>", laud_eest)
+        self.nupp1.bind("<Button-1>", laud_eest)        
 
 root = Tk()
 ## kõik window värk siin vahel
