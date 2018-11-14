@@ -7,6 +7,7 @@ class jaotus:
         mvar = IntVar()
         
         def laud_eest(self):
+            canvas.delete("all") ## kustutab igal nupuvajutusel
             ## 1. punkti (X, Y) koordinaadid, 2. punkti (X, Y) koordinaadid
             ## Antud funktsioonis ei ole laius_callback'i kordagi kasutatud, sest üritasin saavutada kõigest 2D pilti.
             ## Muutujate jalg2;3;4 (ehk parempoolse jala kolm joont) juures on lahutatud mingid arvud pikkus_callbackist selleks,
